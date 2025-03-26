@@ -1,10 +1,13 @@
+import React, { Suspense } from 'react';
 import './App.css';
+const Counter = React.lazy(() => import("Counter/Counter"));
 
 const App = () => {
   return (
     <div className="content">
-      <h1>Rsbuild with React</h1>
-      <p>Start building amazing things with Rsbuild.</p>
+      <Suspense fallback={null}>
+        <Counter />
+      </Suspense>
     </div>
   );
 };
