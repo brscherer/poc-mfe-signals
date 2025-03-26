@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { signal } from '@preact/signals-react';
+
+const count = signal(0)
 
 const Counter: React.FC = () => {
-  const [count, setCount] = useState(0);
 
   const increment = () => {
-    setCount(count + 1);
+    count.value += 1
   };
 
   const decrement = () => {
-    setCount(count - 1);
+    count.value -= 1
   };
 
   return (
