@@ -1,21 +1,19 @@
 import React from 'react';
-import { signal } from '@preact/signals-react';
-
-const count = signal(0)
+import Store from "../store/global";
 
 const Counter: React.FC = () => {
 
   const increment = () => {
-    count.value += 1
+    Store.count.value++
   };
 
   const decrement = () => {
-    count.value -= 1
+    Store.count.value--
   };
 
   return (
     <div>
-      <h1>Counter: {count}</h1>
+      <h1>Counter: {Store.count}</h1>
       <button onClick={increment}>Increment</button>
       <button onClick={decrement}>Decrement</button>
     </div>

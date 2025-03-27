@@ -12,6 +12,7 @@ export default defineConfig({
       filename: "remote.container.js.bundle",
       exposes: {
         "./Counter": "./src/components/Counter",
+        "./Store": "./src/store/global",
       },
       shared: Object.fromEntries(
         Object.entries(pkg.dependencies)
