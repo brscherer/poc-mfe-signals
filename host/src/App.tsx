@@ -8,7 +8,7 @@ const App: React.FC = () => {
   return (
     <div className="content">
       <Suspense fallback={null}>
-        <h1>Remote Count is stored as: {Store.count.value}</h1>
+        <h1>Remote Count is stored as: {Store.count}</h1>
         <Counter />
       </Suspense>
     </div>

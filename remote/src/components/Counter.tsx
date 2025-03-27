@@ -2,7 +2,6 @@ import React from 'react';
 import Store from '../../../store/src/index'
 
 const Counter: React.FC = () => {
-
   const increment = () => {
     console.log({Store})
     Store.count.value++
@@ -14,7 +13,7 @@ const Counter: React.FC = () => {
 
   return (
     <div>
-      <h1>Counter: {Store.count.value}</h1>
+      <h1>Counter: {Store.count}</h1>
       <button onClick={increment}>Increment</button>
       <button onClick={decrement}>Decrement</button>
     </div>
