@@ -13,6 +13,9 @@ export default defineConfig({
       exposes: {
         './Counter': './src/components/Counter',
       },
+      remotes: {
+        Host: 'host@http://localhost:3000/host.container.js.bundle',
+      },
       shared: {
         ...Object.fromEntries(
           Object.entries(pkg.dependencies).map(([dep, { version }]) => [
@@ -20,7 +23,6 @@ export default defineConfig({
             { singleton: true, eager: true, requiredVersion: version },
           ]),
         ),
-        '../store/src/index': { singleton: true, eager: true },
       },
     }),
   ],

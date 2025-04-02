@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import Store from "../../store/src/index";
+import Store from "./store/global";
 import './App.css';
 
 const Counter = React.lazy(() => import("Counter/Counter"));

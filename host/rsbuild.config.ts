@@ -9,8 +9,12 @@ export default defineConfig({
     pluginReact(),
     pluginModuleFederation({
       name: 'host',
+      filename: 'host.container.js.bundle',
       remotes: {
         Counter: 'remote@http://localhost:3002/remote.container.js.bundle',
+      },
+      exposes: {
+        "./Store": './src/store/global.ts',
       },
       shared: {
         ...Object.fromEntries(
@@ -19,7 +23,6 @@ export default defineConfig({
             { singleton: true, eager: true, requiredVersion: version },
           ]),
         ),
-        '../store/src/index': { singleton: true, eager: true },
       },
     }),
   ],
